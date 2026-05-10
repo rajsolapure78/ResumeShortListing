@@ -5,8 +5,7 @@ matplotlib
 numpy
 scikit-learn
 nltk
-spacy==3.7.2
-https://github.com
+spacy
 pdfplumber
 PyPDF2
 python-docx
