@@ -1,10 +1,22 @@
 import streamlit as st
 import re, json
 import nltk
+import ssl
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from PyPDF2 import PdfReader
 from docx import Document
+
+# Fix for SSL certificate issues in cloud environments
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+# Download the specific resource the error is asking for
+nltk.download('punkt_tab')
 
 nltk.download("punkt", quiet=True)
 nltk.download("stopwords", quiet=True)
